@@ -1,0 +1,12 @@
+services:
+  openclaw:
+    image: ghcr.io/openclaw/openclaw:latest
+    container_name: openclaw
+    restart: unless-stopped
+    ports:
+      - "18789:18789"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+
