@@ -1,4 +1,9 @@
 .env
 data/
+<<<<<<< HEAD
 node_modules/
+=======
+*.pem
+*.key
+>>>>>>> d98e5c30857fac260e76156dabdb2de84ab3e065
 *.log
