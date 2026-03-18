@@ -2,8 +2,8 @@ services:
   openclaw:
     image: ghcr.io/hostinger/hvps-openclaw:latest
     init: true
-    ports:
-      - "${PORT}:${PORT}"
+    expose:
+      - "${PORT}"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.openclaw-ue07.rule=Host(`app.edbrooks.io`)"
