@@ -1,0 +1,18 @@
+services:
+  openclaw:
+    image: ghcr.io/hostinger/hvps-openclaw:latest
+    init: true
+    ports:
+      - "${PORT}:${PORT}"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.openclaw-ue07.rule=Host(`app.edbrooks.io`)"
+      - "traefik.http.routers.openclaw-ue07.entrypoints=websecure"
+      - "traefik.http.routers.openclaw-ue07.tls.certresolver=letsencrypt"
+      - "traefik.http.services.openclaw-ue07.loadbalancer.server.port=50531"
+    env_file:
+      - .env
+    restart: unless-stopped
+    volumes:
+      - ./data:/data
+      - ./data/linuxbrew:/home/linuxbrew
