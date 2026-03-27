@@ -7,3 +7,5 @@ node_modules/
 *.key
 >>>>>>> d98e5c30857fac260e76156dabdb2de84ab3e065
 *.log
+
+github_pat_*
